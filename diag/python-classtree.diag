@@ -1,0 +1,7 @@
+blockdiag {
+
+   class_A -> class_B;
+   class_A -> class_C;
+   class_B -> class_D;
+   class_C -> class_D;
+}

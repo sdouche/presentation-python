@@ -12,7 +12,7 @@ Il y&#39;a 1 an : **120k** SLOC
 
 # SLOC total (3,5 ans)
 
-Entre **350k** et **500k** SLOC
+Entre **350k** et **450k** SLOC
 
 # Moyenne de développeurs
 
@@ -32,12 +32,7 @@ Entre 4 et 5
 
 # Chaque langage est une *vision* du développement
 
-.fx: bigbullet
-
-* choix technique
-* une philosophie
-* une sémantique
-* une syntaxe
+![](concept.png)
 
 --- 
 
@@ -98,7 +93,6 @@ Le site `Python Success` cite ces catégories :
 * YouTube
 * Disqus / SurveyMonkey
 * Rackspace Hosting
-* QNX
 
 ---
 
@@ -117,7 +111,6 @@ Le prototype fut développé en Python.
 * Greg Stein
 * Wesley Chun
 * Fredrik Lundh
-* Thomas Wouters
 * Collin Winters
 
 --- 
@@ -134,56 +127,13 @@ Le prototype fut développé en Python.
 
 ---
 
-# historique  (1)
-
-# Le projet démarre en 1989 :
-
-* 0.9.0 = 1991
-* 1.0.0 = 1994
-* 1.5.2 = 1998
-* 1.6.0 = 2000
-
---- 
-
-# historique  (2)
-
-# Première évolution :
-
-* 2.0.0 = 2000
-* 2.1.0 = 2001
-* 2.2.0 = 2002
-* 2.3.0 = 2003
-* 2.4.0 = 2004 (plus maintenue)
-* 2.5.0 = 2006 (fin de maintenance : 10/2011)
-* 2.6.0 = 2008
-* 2.7.0 = 2010 (dernière branche 2.x officielle)
-
-
---- 
-
-# historique  (3)
-
-# Ré-écriture de Python (branche 3.x) :
-
-* 3.0 = 2008
-* 3.1 = 2009
-* 3.2 = 2011
-
----
-
 # philosophie
 
 # lisibilité
 
-Ne pas se poser de question sémantique / syntaxique quand on lit du code
-
 # Homogénéité
 
-Une seule manière de faire une chose.
-
 # Explicite
-
-Pas de magie noire.
 
 # Concision
 
@@ -193,107 +143,11 @@ Pas de magie noire.
 
 # battery included
 
-Avoir le minimum pour travailler (~300 modules)
-
 ---
 
 # Ma citation préférée sur Python
 
 > Ce qui est simple doit rester simple, ce qui est compliqué doit est possible
-
---- 
-
-# Résultat
-
-# Un langage :
-
-* expressif (pseudo code)
-* consistent
-* orthogonal (manuel de référence : ~100 pages)
-
---- 
-
-# 31 mots clés
-
-.fx: image
-
-![](python-keyword.png)
-
----
-
-# Builtins
-
-.fx: image
-
-![](python-builtins.png)
-
----
-
-# PEP : Python Enhancement Proposal
-
-.fx: image
-
-![](python-pep.png)
-
----
-
-# Grammaire du C
-
-.fx: image
-
-![](c-grammar.jpg)
-
----
-
-# Grammaire du Javascript
-
-.fx: image
-
-![](javascript-grammar.jpg)
-
----
-
-# Grammaire de 1.8.4
-
-.fx: image
-
-![](ruby-grammar.jpg)
-
----
-
-# Grammaire de Java 1.5
-
-.fx: image
-
-![](java-grammar.jpg)
-
----
-
-# Grammaire de Python 2.3.3
-
-.fx: image
-
-![](python-grammar.jpg)
-
----
-
-# Gestion de projet saine
-
-Fonctionnalité d&#39;une version N+1 dans la version N :
-
-    !python
-    from future import with_statement
-
-
-Inversement, il existe les `DeprecationWarning` et `PendingDeprecationWarning`.
-
-# Backport de modules 2.7 / 3.2 sur Python 2.5 / 2.6.
-
-Modules packaging, unittest2...
-
-# CPython
-
-Souvent cité comme du code C de belle facture, peu de plantage connu.
 
 ---
 
@@ -329,7 +183,7 @@ Transformation en code structuré avec des méthodes :
     def hello_world():
         print "hello world!"
 
-    if __name__ == '__main__':
+    if __name__ == &#39;__main__&#39;:
         hello_world()
 
 Je peux utiliser la méthode en important mon fichier :
@@ -349,7 +203,7 @@ Transformation en code objet :
        def hello_world(self):
            print "hello world!"
  
-    if __name__ == '__main__':
+    if __name__ == &#39;__main__&#39;:
         test = MyClass() 
         test.hello_world()
 
@@ -390,69 +244,12 @@ Module `functools`, `itertools`, `operator`.
 
 ---
 
-# pythonic / unpythonic
-
----
-
-# Exemple
-
-unpythonic :
-
-    !python
-    i = 0
-    while i < mylist_length:
-        do_something(mylist[i])
-        i += 1
-
-pythonic :
-
-    !python
-    for element in mylist:
-        do_something(element)
-
-pythonic avec gestion de l&#39;indice :
-
-    !python
-    for indice, element in enumerate(mylist):
-        do_something(element)
-        print indice
-
----
-
-
-# Package Python
-
-La présence d&#39;un fichier vide `__init__.py` dans un répertoire...
-
-    !bash
-    $ cd mydir
-    $ touch __init__.py
-
-... le transforme en **package** Python :
-
-    !python
-    from mydir.sample import MyClass
-
----
-
-# Classpath (à la compilation)
-
-# Principaux répertoires :
-
-* .
-* /usr/lib/python2.7
-* /usr/lib/python2.7/dist-packages
-* /usr/local/lib/python2.7/dist-packages
-* /home/`<user>`/.local/lib/python2.7/site-packages
-
----
-
 # Caractéristiques :
 
 .fx: bigbullet
 
 * Dynamique
-* Fortement typé
+* «Fortement» typé
 * Duck typing
 
 ---
@@ -464,14 +261,15 @@ La présence d&#39;un fichier vide `__init__.py` dans un répertoire...
 Inutile de typer la variable, mais seulement l&#39;objet :
 
     !python
-    a = 1            # objet int
-    a = "My string"  # objet string
+    myvar  = 1          # objet int
+    myvar = "My string" # objet string
+    myvar = ['a']       # objet list
 
 Le type est vérifié à l&#39;éxécution.
 
 ---
 
-# Fortement typé
+# «Fortement» typé
 
 Pas de **cast** automatique :
 
@@ -496,24 +294,6 @@ Pas de **cast** automatique :
 > When I see a bird that walks like a duck and swims like a duck
 > and quacks like a duck, I call that bird a duck
 
-
----
-
-# Rappel sur le type statique
-
-# Avantages :
-
-* Clarification
-* Détection d&#39;erreur à la compilation
-* Performance
-* Refactoring automatique
-
-# Défauts :
-
-* Création d&#39;interfaces incompatibles
-* Ne pousse pas la factorisation
-* Boilerplate
-* Refactoring plus dangereux
 
 ---
 
@@ -564,31 +344,63 @@ Comparable au :
 
 ---
 
+# Pas de code métier autour d&#39;un type
+
 # Nécessite de mieux connaitre le fonctionnel
+
+    !python
+    class Person:
+        def quack(self):
+            print("The person imitates a duck.")
+        def feathers(self):
+            print("The person takes a feather from the ground and shows it.")
+        def name(self):
+            print("John Smith")
 
 ---
 
 # Collage de code non vérifié
 
+    !python
+    def my_function(a, b, c, d):
+        do_something()
+
+    my_function('a', 2, [], {})
+
 ---
 
 # Facilite le code spaghetti
+
+    !python
+    struct = {}
+    ...
+    struct = []
+    ...
+    struct = ({}, {})
 
 ---
 
 # Plus facile de pousser un bug en production
 
+# Aucun avertissement du compilateur
+
+    !python
+    def myfunction(value = []):
+        do_something()
+    ...
+    myfunction({'x':1})
+
 ---
+
+# Autres
 
 # Pas de refactoring automatique
 
----
+Même si des IDE comme PyCharm font des progrès.
 
 # Performance
 
----
-
-# Aucun avertissement du compilateur
+Projet v8 pour JS / LuaJIT / PyPy / Rubinius
 
 ---
 
@@ -596,43 +408,119 @@ Comparable au :
 
 ---
 
-# Simple
+# Code structuré en de blocs fonctionnels
+
+# Je n&#39;ai plus besoin de gérer mon arbre de types :
+
+![typestree](typestree.png)
+
+* Limite l&#39;inter-dépendance
+* Collage de code simplifié
 
 ---
 
+# Simple
+
 # Pousse à la simplicité
+
+    !python
+    class Myclass(object):
+        def functionA(self):
+            do_something()
+
+        def functionB(self):
+            do_something()
+
+        def functionC(self):
+            do_something()
+
+        def my_function(self):
+        ....
 
 ---
 
 # Souple
 
----
+# Il suffit de donner la méthode voulue. La surcharger est triviale :
 
-# Généricité
+    !python
+    from mock import patch
 
+    @patch('subprocess.Popen')
+    def test_process_wrapper_bad_path(self, mock_popen):
+
+        mock_popen.side_effect = OSError(2, 'No such file or directory')
+
+        self.assertRaises(exceptions.AppNotFound,
+                          processes.process_wrapper,
+                          self.release_dir, 'foo', [], "")
+
+    
 ---
 
 # API simplifiée
 
+# Pas besoin d&#39;un code pour le type X, le type Y, le type Z.
+
+    !python
+    len(struct)
+
+# Un code qui fonctionne avec des structures différentes :
+
+    !python
+    class MyClass(object):
+        def funcA(self, values):
+            for i in values:
+                do_something()
+
+    C = MyClass()
+    C.funcA('1, 2, 3')
+    C.funcA(['1, 2, 3'])
+    C.funcA(('1, 2, 3'))
+
 ---
 
-# Collage de code simplifié
+# Introspection
+
+    !python
+    import imp
+    import inspect
+    import sys
+
+    if len(sys.argv) >= 2:
+    fi    lename = sys.argv[1]
+    else:
+        filename = 'example.py'
+
+    try:
+        (name, suffix, mode, mtype)  = inspect.getmoduleinfo(filename)
+    except TypeError:
+        print 'Could not determine module type of %s' % filename
+    else:
+        mtype_name = { imp.PY_SOURCE:'source',
+                       imp.PY_COMPILED:'compiled',
+                       }.get(mtype, mtype)
+
+        mode_description = { 'rb':'(read-binary)',
+                             'U':'(universal newline)',
+                             }.get(mode, '')
+
+        print 'NAME   :', name
+        print 'SUFFIX :', suffix
+        print 'MODE   :', mode, mode_description
+        print 'MTYPE  :', mtype_name
 
 ---
 
-# Simplifie le refactoring
+# Moins de lignes
 
----
+# Moins de lignes, moins de bugs
 
-# limite l&#39;inter-dépendance
+Le nombre de bugs par ligne ne dépend pas du langage.
 
----
+# Moins de lignes, plus de facilité à comprendre
 
-# - de lignes = - de bugs
-
----
-
-# - de lignes = + facile à comprendre
+Il est plus facile d&#39;appréhender 10 lignes que 20, 50 que 100, 1000 que 5000.
 
 ---
 
@@ -640,22 +528,91 @@ Comparable au :
 
 ---
 
-# Introspection
-
----
-
 # Evaluateur en ligne
+
+.fx: image
+
+![](python-repl.png)
 
 ---
 
 # Compenser les lacunes
 
-Avec :
+---
 
-* Documentation (entrée, sortie, exception)
-* Doctest
-* Refactorer souvent
-* Strong typing vs Strong testing
+# Documentation
+
+Documenter les interfaces (entrée, sortie, exception)
+
+    !python
+    def create_conf(work_dir, software, chassis):
+        """Create an configuration file
+
+        :param: work_dir: the directory
+        :type: work_dir: string
+        :param: software: type of software
+        :type: software: string
+        :param: chassis: type of chassis
+        :type: chassis: string
+        :returns: nothing
+        :raises: nothing
+        """
+
+Documenter, mais surtout pourquoi, pas comment !
+
+Sauf comment quand c&#39;est :
+* complexe
+* non naturel (bug, besoin...)
+
+---
+
+# Doctest
+
+# Ecrire de la documentation valide
+
+    !python
+    class Net(object):
+    """Simple usage of SubNet constructed above CIDR implementation.
+
+    You can specify your address in both ipv4 or ipv6 CIDR notation:
+
+    >>> Net(&#39;192.168.0.0/24')
+    Net(&#39;192.168.0.0/24')
+
+    >>> Net('::ffff:192.168.0.0/120')
+    Net(&#39;192.168.0.0/24')
+
+    But also with '*' notation::
+
+    >>> Net('192.168.0.*')
+    Net(&#39;192.168.0.0/24')
+
+    >>> Net(24)
+    Traceback (most recent call last):
+    ...
+    TypeError: ..
+    """
+
+
+---
+
+#Refactorer souvent
+
+# Refactoring, refactoring, refactoring...
+
+Idéalement c&#39;est 50% du temps de codage.
+
+---
+
+# Strong typing vs Strong testing
+
+# Beaucoup de tests.
+
+* Les Tests Unitaires couvrent le refactoring
+* Les Tests fonctionnels couvrent le fonctionnement général
+* Les Tests de bout en bout couvrent les besoins client
+
+Regardez les nouveautés Unittest2 (Python2.7+)
 
 ---
 
@@ -852,6 +809,36 @@ et non :
 
 ---
 
+# Types disponibles
+
+# Types dans les modules :
+
+* heapq
+* collections (namedtuple, deque, coutner, OrderedDict, defaultdict)
+* bisect
+* array
+* sched
+* queue
+* ...
+
+---
+
+    !python
+    mystruct = [1. 2, 3]
+    mystruct = [{1: 'a'}, {2: 'b'}]
+    mystruct = [{1: 'a'}, [{2: 'b'}, (1, 2)]]
+
+    new_event = {"description": "test",
+                 "name": "Les Concerts & ouvertures praguoises",
+                 "sessions": [ { "showDateTimeStart": datetime.datetime.utcnow() } ],
+                 "updated": datetime.datetime.utcnow(),
+                 "venue": { "name": "Opera",
+                            "pCode": "21000",
+                            "town": "Dijon",
+                            "way": "11 Boulevard de Verdun" }}
+
+---
+
 # Decorateur
 
 Un décorateur permet d&#39;injecter ou de modifier le comportement d&#39;une fonction / classe.
@@ -911,7 +898,7 @@ On retrouve la philosophie *Faire les choses d&#39;une seule manière* :
     for element in (1, 2, 3):
         print element
 
-    for key in {'one':1, 'two':2}:
+    for key in {&#39;one':1, 'two':2}:
         print key
 
     for char in "123":
@@ -969,19 +956,11 @@ Une *list comprenhension* renvoie une liste.
     !python
     S = [2*x for x in range(101) if x**2 > 3]
 
-    T = [x+y for x in 'flower' for y in 'pot']
+    T = [x+y for x in &#39;flower' for y in 'pot']
 
-    U = [x+y for x in 'flower' for y in 'pot' if x != 'w' and y != 'o' ]
+    U = [x+y for x in &#39;flower' for y in 'pot' if x != 'w' and y != 'o' ]
 
 Existe aussi pour les set (set comprehension) et dictionary (dictionary comprehension).
-
----
-
-# Droit
-
-# Pas de notion privé / public.
-
-La convention est de mettre un **_** pour indiquer une méthode privée.
 
 ---
 
@@ -1056,249 +1035,6 @@ Utilise `zope.interface` pour offrir des :
 * subscriptions adapters
 * handlers
 
---- 
-
-# PyPI
-
-Le serveur **PyPI** (http://www.python.org/pypi) liste toutes les distributions disponibles :
-
-**15 200** packages disponibles.
-
----
-
-# pip
-
-L&#39;utilitaire pip permet de manipuler les packages :
-
-    $ pip freeze
-    distribute==0.6.16
-    mercurial==1.8.3
-    virtualenv==1.6.1
-    wsgiref==0.1.2
-
-    $ pip search pyramid
-    pyramid_simpleform        - pyramid_simpleform
-    pyramid                   - The Pyramid web application framework, a Pylons project
-    pyramid_mailer            - Sendmail package for Pyramid
-    pyramid_pyctpp2           - pyctpp2 template bindings for the Pyramid web framework
-    pyramid_jinja2            - Jinja2 template bindings for the Pyramid web framework
-    pyramid_socketio          - Gevent-based Socket.IO pyramid integration and helpers
-    pyramid_beaker            - Beaker session factory backend for Pyramid
-    pyramid_viewgroup         - An anlologue of Zope 3 "content providers" for Pyramid
-    ...
-
-    $ pip install pyramid
-
----
-
-# virtualenv
-
-L&#39;utilitaire `virtualenv` de créer un environnement virtual :
-
-    $ virtualenv --no-site-packages newenv
-    New python executable in newenv/bin/python
-    Installing setuptools............done.
-    Installing pip...............done.
-
-    $ ls newenv/
-    bin  include  lib
-
-    $ ls newenv/bin/
-    activate      activate.fish     easy_install      pip      python
-    activate.csh  activate_this.py  easy_install-2.7  pip-2.7
-
-
----
-
-# buildout
-
-Outil de génération d&#39;environnement répétable
-
-# Extensible avec des `recipes`. Il en existe pour :
-
-* installer des applications (Apache, Nginx...)
-* configurer 
-* générer des scripts
-* ...
-
-# Exemple avec 2 recipes de ma société :
-
-* sact.recipe.junkie
-* sact.recipe.postgresql
-
---- 
-
-# buildout - configuration basique
-
-    !bash
-    [buildout]
-    develop = .
-
-    parts = myapp
-
-    [myapp]
-    recipe = zc.recipe.egg
-    eggs = myeggs
-
----
-
-# pythonbrew
-
-L&#39;utilitaire `pythonbrew` permet d&#39;installer l''interpréteur CPython dans son `$HOME` :
-
-    $ pybrew list -k
-    # available install pythons
-    Python-1.5.2
-    ...
-    Python-2.5.5
-    Python-2.6.6
-    Python-2.7.1
-    Python-3.0.1
-    Python-3.1.3
-    Python-3.2
-    
-    $ pybrew install 2.7.1
-
----
-
-# Interpréteurs
-
-L&#39;interpréteur de référence est **CPython**. Mais il exsite :
-
-* IronPython (.NET)
-* Jython (Java Virtual Machine)
-* PyPy (JIT compiler)
-* Stackless Python (microthreads)
-
-**PyPy** est le futur !
-
----
-
-# PyPy - http://www.pypi.org
-
-# PyPy est un interpréteur Python qui inclus un **JIT** fait en... Python.
-
-PyPy est constitué de deux composants :
-
-* un interpréteur Python, écrit en **RPython**
-* une chaîne d&#39;outils qui analyse RPython et le traduit en un langage bas niveau
-
-Il manque encore l&#39;API C.
-
-
-Backends :
-
-* CLI
-* JVM 
-* Javascript (abondonné)
-* LLVM (à l&#39;étude)
-
----
-
-# PyPy - http://speed.pypy.org
-
-Actuellement **3.7x** plus rapide que CPython (peut monter à 10x à 40x) :
-
-![](pypy-speed.png)
-
----
-
-# Python 2 ou Python 3 ?
-
-# Python 2.7.x est la dernière branche 2.x
-
-L&#39;objectif de la communauté est de switcher à Python 3.x avec la future 3.3.
-
-# La migraion est facilitée avec les backports des nouveautés
-
-* 2.6 <= 3.1 
-* 2.7 <= 3.2
-
-L&#39;outil `2to3` convertit automatiquement du code 2.x en 3.x.
-
-# Python 3.3 apportera le package `packaging`
-
-Intégrer 8 ans d&#39;amélioration sur le packaging.
-
----
-
-# WSGI
-
-*Web Server Gateway Interface* (PEP 333) est une spécification de communication pour serveur applicatif et serveur web pour communiquer avec des applications serveur.
-
----
-
-# Outils
-
-Il existe des `shells` plus évolués que *IDLE* :
-
-* bpython
-* ipython
-
-Outils de vérification de code statique :
-
-* pylint
-* pychecker
-* pep8
-
----
-
-# IDE
-
-Une liste complète : http://wiki.python.org/moin/PythonEditors
-
-Les éditeurs historiques :
-
-* Vim
-* Emacs
-
-Des IDE plus «classiques» :
-
-* WingIDE
-* PyCharm
-* Komodo
-* PyDev
-* Netbeans
-
----
-
-# PyCon (Python Conference)
-
-* PyCon US
-* PyCon Asia Pacific / Kiwi PyCon /  AU
-* PyCon Ireland / Italia / FR / PL / UK 
-* PyCon India
-* Python Brasil / AR
-* EuroPython
-* SciPy US / India
-
-# Des vidéos disponibles sur http://python.mirocommunity.org
-
---- 
-
-# Pour apprendre - web
-
-# Une sélection de sites :
-
-* http://docs.python.org/tutorial/index.html
-* http://diveintopython.org
-* http://www.pythonchallenge.com
-* http://docs.python.org
-* http://pyth0n.org
-
----
-
-# Pour apprendre - livres
-
-# Une sélection de livres :
-
-* Programming - Mark Lutz - O&#39;Reilly
-* Python Programming: An Introduction to Computer Science - John Zelle
-* Python Essential Reference - David M. Beazley
-* Python Algorithms: Mastering Basic Algorithms in the Python Language - Magnus Hetland
-* The Python Standard Library by Example - Doug Hellmann
-* Python Testing cookbook - Greg L. Turnquist
-
 ---
 
 # **Conclusion**
@@ -1311,9 +1047,15 @@ Des IDE plus «classiques» :
 
 # Efficacité
 
+# Permet de coder des scripts de 5 SLOC aux projets de :
+* < 50k SLOC «facilement»
+* < 150k SLOC avec maitrise
+* +150k SLOC avec grande rigueur
+
+
 ---
 
-# Permet de coder des scripts de 5 SLOC aux projets de 150k SLOC
+# Le manque de typage est génant, mais les typages forts actuels sont encore plus génants à mes yeux
 
 ---
 

@@ -1,0 +1,9 @@
+blockdiag {
+
+   root -> type_A;
+   root -> type_B;
+   root -> type_C;
+   type_A -> type_D;
+   type_A -> type_E;
+   type_E -> type_F;
+}

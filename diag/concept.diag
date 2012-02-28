@@ -1,0 +1,12 @@
+blockdiag {
+   orientation = portrait
+
+   ph [label = "Philosophie"];
+   ct [label = "Choix techniques", color = pink];
+   se [label = "Sémantique"];
+   sy [label = "Syntaxe"];
+
+   ph -> ct;
+   ct -> se;
+   se -> sy;
+}
