@@ -104,4 +104,43 @@ fx: title
 
 ---
 
+# Mon parcours
+
+Jeune (1985 - 1995) :
+
+* BASIC
+* C
+* Assembleur x86
+
+---
+
+# Mon parcours
+
+Moins jeune (1996 - 2002) :
+
+* Python / Ruby / Perl / PHP
+* REBOL
+* ADA
+* Eiffel
+* Erlang
+* Pike
+* Tcl/Tk
+* Unix Shell
+* Smalltalk
+* Objective C
+
+---
+
+# Mon parcours
+
+Vieux (2011) :
+
+* Scala
+* Javascript
+* Coffeescript
+* Go
+* Lua
+
+---
+
 # &lt;/me&gt;

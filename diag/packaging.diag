@@ -1,0 +1,14 @@
+blockdiag {
+   orientation = portrait
+
+   python      [label = "Python"];
+   distutils   [label = "Distutils", color = pink];
+   distribute  [label = "Distribute"];
+   setuptools  [label = "Setuptools"];
+   pip         [label = "PIP"];
+   easyinstall [label = "Easy-Install"];
+
+   python -> distutils -> setuptools -> easyinstall
+   distutils -> distribute -> pip
+
+}
